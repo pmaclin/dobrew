@@ -1,0 +1,114 @@
+<div class="page-header">
+
+<%# if @x.present? %>
+ <%# @u.rand_num != params[:new_number] %>
+<!-- <h1 align="center">A number cannot be used more than once.</h1> -->
+<%# else %>
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+  <% if @u.present? %>
+    <h1 align="center">We have a match!<span aria-hidden="true" class="fa fa-beer"></span></h1> <h2 align="center"><%#= @u.rand_num %> Here's what you have in your hand:</h2>
+  </div>
+  Incoming Params of new_number: <%= params[:new_number]%>
+  <% @u.batch.matched = params[:new_number]%>
+  <% @u.batch.save %>
+</div>
+
+  <div class="row">
+  <div class="col-lg-12">
+  <div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Batch ID#<%= @u.batch_id %> | <%= @u.batch.recipe.name %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12 col-lg-12">
+            <dl class="dl-horizontal">
+
+              <dt>The Brewer: </dt>
+              <dd><%= image_tag @u.batch.user.avatar, :height => "100px", :width => "100px", :class => "img-responsive" %></dd>
+              <dd><%= @u.batch.recipe.user.username %></dd>
+
+              <dt>Brew date: </dt>
+              <dd><%= @u.batch.brew_date %></dd>
+
+              <dt>Bottle date: </dt>
+              <dd><%= @u.batch.bottle_date %></dd>
+
+              <dt>Actual Original Graavity: </dt>
+              <dd><%= @u.batch.aog %></dd>
+
+              <dt>Final Gravity: </dt>
+              <dd><%= @u.batch.afg %></dd>
+
+              <dt>ABV: </dt>
+              <dd><%= @u.batch.aabv %>%</dd>
+
+              <dt>Aroma: </dt>
+              <dd><%= @u.batch.aaroma %></dd>
+
+              <dt>IBUs: </dt>
+              <dd><%= @u.batch.aibu %></dd>
+
+              <dt></dt>
+              <dd><%= image_tag @u.batch.image, :height => "100px", :width => "100px" %></dd>
+
+              <dt>Description: </dt>
+              <dd><%= @u.batch.aflavpro %></dd>
+
+              <%# Uni.find_by({ :batch_id => 'batch.id', :batch_id => 'review.batch_id' }) %>
+
+
+<hr>          <!-- Creates a new review from an existing batch -->
+
+          <% if @u.is_used == true %>
+                <h1 align="center">Ooops!</h1>
+                <h4 align="center">Something went wrong. Please try a different number.</h4>
+
+                  <form action="/match_brew">
+                    <div align="center">
+                      <label for="new number" >Input Brew Number</label>
+                      <input name="new_number" type="text" id="first">
+                      <input align="right" type="submit" value="Find your brew">
+                    </div>
+                  </form>
+
+          <% else %>
+
+              <p><h4 align="center">Tell the brewer what you <u>really</u> think about this brew.</h4></p>
+              <p><h4 align="center">Review it now.</h4></p>
+              <p align ="center"><%= link_to icon('check'), new_review_path( :batch_id => (@u.batch_id) ), class: "btn btn-lg btn-success" %></p>
+              <!-- Send batch info to the new review path; send params[:new_number] to the edit_batch_path -->
+
+              <% @u.is_used = true %>
+              <% @u.save %>
+
+          <% end %>
+
+            </dl>
+
+                </div> <!-- end div column -->
+              </div> <!-- end div row -->
+            </div> <!-- end div panel body -->
+        </div> <!-- end div class panel -->
+      </div> <!-- end div col offset -->
+    </div> <!-- end div row -->
+  </div> <!-- end div col-lg-6 -->
+</div> <!-- end div row -->
+
+
+<% else %>
+  <h1>Wait. What!?<span aria-hidden="true" class="fa fa-frown-o"></span></h1>
+<%= params[:new_number] %> doesn't match with any of the brews in our database. Please click on <%= link_to "Rate-a-Brew", "/mirrors/input" %> and try again!
+<% end %>
+<%# end %>
+
+</div>
+
+
+
+
+

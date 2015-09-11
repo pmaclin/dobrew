@@ -1,0 +1,110 @@
+<div class="page-header">
+  <h1>
+    Your Unique IDs
+    <% if current_user.email == "p1@example.com" %>
+    <%= link_to icon('plus'), new_unique_path, class: "btn btn-lg btn-success" %>
+    <% end %>
+  </h1>
+  <h5>Brewers - Apply the unique number that corresponds to the batch you're sharing. Write it on the bottle of beer, or on the cap, the label or where ever your fan can see it.  Your fans will come back to the site, input the number, access the brew's profile and review it.</h5>
+</div>
+
+<!-- Responsive, Isotope-based layout example -->
+
+<!-- <div class="row">
+  <div class="col-xs-12  text-center">
+  <%#= paginate(@uniques) %>
+  </div>
+</div> -->
+
+<div class="panel panel-default">
+  <div class="panel-heading">UNIQUE NUMBERS CREATED</div>
+
+    <table class="table" align="left">
+      <thead>
+          <tr>
+              <th>ID#</th>
+              <th>Image/Label</th>
+              <th>Brew Date</th>
+              <th>Recipe Name</th>
+              <th>Unique Number</th>
+              <% if current_user.email == "p1@example.com" %>
+              <th>User ID</th>
+              <th>Controls</th>
+              <% end %>
+          </tr>
+      </thead>
+      <tbody>
+      <% @uniques.each do |unique| %>
+
+
+          <tr>
+            <td><%= unique.id %></td>
+            <td><%= image_tag unique.batch.image, :height => '50px', :width => '50px' %></td>
+            <td><%= unique.batch.brew_date %></td>
+            <td><%= unique.batch.recipe.name %></td>
+            <td><%= unique.rand_num %></td>
+
+          <% if current_user.email == "p1@example.com" %>
+            <td><%= unique.batch.user_id %></td>
+            <td>
+
+              <%= link_to icon('search-plus'), unique, class: "btn btn-primary" %>
+
+              <%= link_to icon('edit'), edit_unique_url(unique), class: "btn btn-warning" %>
+
+              <%= link_to icon('trash-o'), unique, method: :delete, data: { confirm: "Do you really want to delete this unique?" }, class: "btn btn-danger" %>
+          <% end %>
+            </td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+</div>
+
+
+<!-- JavaScript for Isotope layout and quicksearch -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
+<script>
+  $(function() {
+    // quick search regex
+    var qsRegex;
+
+    // init Isotope
+    var $container = $('.isotope-container');
+
+    $container.imagesLoaded(function() {
+      $container.isotope({
+        itemSelector: '.isotope-item',
+        layoutMode: 'masonry',
+        filter: function() {
+          return qsRegex ? $(this).text().match( qsRegex ) : true;
+        }
+      })
+    });
+
+    // use value of search field to filter
+    var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+      qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+      $container.isotope();
+    }, 200 ) );
+
+  });
+
+  // debounce so filtering doesn't happen every millisecond
+  function debounce( fn, threshold ) {
+    var timeout;
+    return function debounced() {
+      if ( timeout ) {
+        clearTimeout( timeout );
+      }
+      function delayed() {
+        fn();
+        timeout = null;
+      }
+      timeout = setTimeout( delayed, threshold || 100 );
+    }
+  }
+</script>
+
+<!-- End responsive, Isotope-based layout example -->

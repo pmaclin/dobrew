@@ -1,0 +1,134 @@
+<div class="page-header">
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-md-6 col-lg-8" align="center">
+
+      <body>
+
+      <h2 align="left">Hi, <%= current_user.username %>!</h2>
+      <dd><%#= image_tag @user.avatar, :class => "img-responsive" %></dd>
+
+        <div class="row">
+          <p align="left"><% if current_user.recipes.count < 3 %><font color="red"> MESSAGES:</font>
+          "Hey! You've only created <%= current_user.recipes.count %> recipe(s) so far? You need to add more recipes and create more batches. Let's get brewing!" </p>
+          <% end %>
+            <div class="row">
+              <div class="col-lg-3">
+                <dd><%= image_tag @user.avatar, :height => '200px', :width => '200px', :class => 'img-circle' %></dd>
+                <dd><%= @user.username %></dd>
+              </div>
+              <div class="col-lg-9 text-left">
+                <li>Location: <%= @user.city %>, <%= @user.state %></li>
+                <li># Years Brewing: <%= @user.yrsexp %></li>
+                <li>Quote:<i> "<%= @user.quote %>"</i></li>
+              </div>
+            </div>
+              <div clas="col-lg-9">
+                <h2 align="left">Review-a-Brew</h2>
+                  <form action="/match_brew">
+                    <div align="left">
+                      <label for="new number"><font color="blue">Input Brew Number</font></label>
+                      <input name="new_number" type="text" id="first">
+                      <input align="right" type="submit" value="Find your brew">
+                    </div>
+                  </form>
+              </div>
+              <br>
+            <div class="list-group" align="left">
+              <a href="#" class="list-group-item active">
+              YOUR STATS
+              </a>
+              <% if current_user.recipes.count > 0 %>
+                <a href="/recipes" class="list-group-item">Number of recipes you've uploaded: <span class="badge"><%= current_user.recipes.count %></span></a>
+                <a href="/batches" class="list-group-item">Number of batches you've created: <span class="badge"><%= current_user.batches.count %></span></a>
+
+                <a href="#" class="list-group-item">Number of reviews from your batches: <span class="badge">?<%#= current_user.batches.reviews.count %></span></a>
+                <a href="#" class="list-group-item">Number of times your recipes have been liked: <span class="badge">?</span></a>
+                <a href="#" class="list-group-item">Your most liked recipe: <span class="badge">American Stout</span></a>
+                <a href="#" class="list-group-item">The beer style in most of your recipes: <span class="badge">Belgian Ale</span></a>
+                <a href="#" class="list-group-item">The beer style you've most frequently reviewed : <span class="badge">American Stout</span></a>
+              <% elsif current_user.recipes.count < 1 %>
+                <a href="#" class="list-group-item">The beer style you've most frequently reviewed : <span class="badge">Wheat Ale</span></a>
+              <% end %>
+            </div>
+
+<!--             <div class="row">
+              <div class="col-md-12" align="left">
+                <h4 align="left">Have a brew to review?</h4>
+                  <form action="http://localhost:3000/match_unique_num" method="get">
+                    Enter a brew number: <input type="text" name="match_unique_num">
+                    <input type="submit" value="Submit"><br>
+                  </form>
+              </div>
+            </div> -->
+
+            <div class="row" align="left">
+              <div class="col-md-12" align="left">
+              <h2 align="left">Beerography <small>(Uploaded Recipes)</small></h2>
+                <ol align="left">
+                  <% recipes = Recipe.where({ :user_id => current_user })  %>
+                    <% recipes.each do |recipe| %>
+                  <li><%= recipe.name %><small>, a <%= recipe.style.name %></small></li>
+                  <% end %>
+                </ol>
+              </div>
+            </div>
+
+          </div>
+      </body>
+    </div>
+
+  <div class="col-sm-6 col-md-6 col-lg-4">
+  <h2>Edit Your Account<%#= resource_name.to_s.humanize %></h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email, required: true, autofocus: true %>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+      <% end %>
+
+
+          <%= f.input :avatar, autocomplete: "off", hint: "Upload an image from your computer. *Hint: The best images uploaded are square (e.g. 200 X 200 pixels)", required: false %>
+            <!-- <div class="row">
+              <div class="col-lg-3">
+                <dd><%#= image_tag @user.avatar, :class => "img-responsive" %></dd>
+                <dd><%= @user.username %></dd>
+              </div>
+              <div class="col-lg-9">
+                <li>City: <%= @user.city %></li>
+                <li>State: <%= @user.state %></li>
+                <li># Years Brewing: <%= @user.yrsexp %></li>
+                <li>Quote:<i> "<%= @user.quote %>"</i></li>
+              </div>
+            </div>
+ -->
+<br>
+      <%= f.input :city, required: false %>
+      <%= f.input :state, collection: [ "AL", "AK", "AZ", "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI", "ID", "IL", "IN", "IA", "KS", "AR", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"], autocomplete: "on", required: false %>
+      <%= f.input :yrsexp, collection: 0..40, hint: "How many years have you been home brewing?", required: false %>
+      <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+      <%= f.input :quote, hint: "Add a quote.", required: false %>
+      <%= f.input :password_confirmation, required: false %>
+      <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+
+
+
+
+    <div class="form-actions">
+      <%= f.button :submit, "Update" %>
+    </div>
+  <% end %>
+
+  <h3>Cancel my account</h3>
+
+  <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+  <%= link_to "Back", :back %>
+    </div>
+  </div>
+</div>
+</div>

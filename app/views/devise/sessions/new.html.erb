@@ -1,0 +1,134 @@
+  <div class="page-header">
+    <div class="container">
+
+            <div id="tbe-carousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#tbe-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#tbe-carousel" data-slide-to="1"></li>
+                <li data-target="#tbe-carousel" data-slide-to="2"></li>
+                <li data-target="#tbe-carousel" data-slide-to="3"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <%= image_tag "6.jpg" %>
+                  <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
+                  <div class="carousel-caption">
+                      <!-- <h3>King Hop 1 - Aligned Center (Placeholder)</h3> -->
+                  </div>
+                </div>
+                <div class="item">
+                  <%= image_tag "4.jpg" %>
+                  <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
+                  <div class="carousel-caption">
+                      <!-- <h3>Caption Text 2</h3> -->
+                  </div>
+                </div>
+                <div class="item">
+                  <%= image_tag "8.jpg" %>
+                  <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
+                  <div class="carousel-caption">
+                      <!-- <h3 align="right">King Hop</h3> -->
+                  </div>
+                </div>
+                <div class="item">
+                  <%= image_tag "7.jpg" %>
+                  <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
+                  <div class="carousel-caption">
+                      <!-- <h3>Caption Text 4</h3> -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Controls -->
+              <a class="left carousel-control" href="#tbe-carousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+              </a>
+              <a class="right carousel-control" href="#tbe-carousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+              </a>
+            </div> <!-- Carousel -->
+    <hr>
+      <div class="row">
+          <div align="center" class="col-md-6 col-lg-9">
+            <h1 align="center"><i>"You Are The Brewmaster!"</i></h1>
+            <br>
+              <h4 align="left" ><font color="navy"><i>"What's the Brewer's Edge?"</i></font></h4>
+              <p align="left">It's like a social network for brewers only the beers are the ones that get profile pages. Fans connect with brewers to leave feedback about their beers, objectively and anonymously.  Brewers can then use the feedback to improve their future batches and become better brewers.</p>
+              <br>
+              <%#= image_tag "murray_01_ps.png", :height => '60%', :width => '60%' %>
+              <h4 align="left" ><font color="navy"><i>"So, how does this work?"</i></font></h4>
+              <p align="left">Easy. Home brewers create an account and upload their beer recipes through their profiles. Just some detail about the beer's intended flavor profile. When a recipe is used to create a real batch of beer, the brewer clicks a button to create a virtual batch on the site.</p>
+              <p align="left">Next, the brewer clcks a button from that virtual batch to generate unique identifiers that their fans will use to come back to the site to review and rate their beers.  Those fan reviews are then immediately available for the brewer to view.</p>
+              <br>
+              <h4 align="left"><font color="navy"><i>"No submissions. No deadlines. No waiting to hear nothing back from a judge!"</i></font></h4>
+              <p align="left">If you've ever entered your beer in a competition you usually will never get any valuable feedback from the judges unless you win, place or show. Never that here. This is about the beer, the brewer and the fans! You're going to give your beer away anyway - You might as well find out what people really think about your creations.</p>
+              <br>
+              <h4 align="left"><font color="navy"><i>"Awesome! But how much will it cost me?"</i></font></h4>
+              <p align="left">Free. Home brewers will be able to generate up to 24 unique numbers for every batch of beer created (in increments of 6 numbers at a time). Upload an unlimited number of recipes. Create an unlimited number of batches. Create several batches of the same recipe and compare the feedback. Tweak your recipes and processes and <i><u><u>raise</u></u> <u>your</u> <u>game!</u></i></p>
+          </div>
+
+        <div class="col-sm-6 col-md-6 col-lg-3">
+        <h2>Log in</h2>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-inputs">
+              <%= f.input :email, required: false, autofocus: true %>
+              <%= f.input :password, required: false %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Log in" %>
+            </div>
+            <% end %>
+
+          <%= render "devise/shared/links" %>
+
+          <div align="center" class="col-md-6 col-lg-12">
+              <%= image_tag "tbe.jpg", :height => '100%', :width => '100%' %>
+            <h4 align="center">BREW. SHARE. ENJOY!</h4>
+          </div>
+
+
+        </div>
+      </div> <!-- end div row -->
+    <hr>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-md-3 col-lg-12">
+          <div class="list-group">
+            <a href="#" class="list-group-item active"><h3>
+            What's Brewing on The Brewer's Edge?</h3><span class="badge"></span>
+            </a>
+            <a href="#" class="list-group-item">Members <span class="badge"><%= User.count %></span></a>
+            <a href="#" class="list-group-item">Recipes Uploaded <span class="badge"><%= Recipe.count %></span></a>
+            <a href="#" class="list-group-item">Batches Made<span class="badge"><%= Batch.count %></span></a>
+            <h3><i>Most Popular Recipe Styles</i></h3>
+            <a href="#" class="list-group-item">American Stout Recipes <span class="badge"><%= Recipe.where({ :style_id => "1" }).count %></span></a>
+            <a href="#" class="list-group-item">Imperial IPA Recipes <span class="badge"><%= Recipe.where({ :style_id => "10" }).count %></span></a>
+            <a href="#" class="list-group-item">American Wheat Recipes <span class="badge"><%= Recipe.where({ :style_id => "2" }).count %></span></a>
+            <a href="#" class="list-group-item">Barleywine Recipes <span class="badge"><%= Recipe.where({ :style_id => "6" }).count %></span></a>
+            <a href="#" class="list-group-item">Amber/Red Ale Recipes <span class="badge"><%= Recipe.where({ :style_id => "3" }).count %></span></a>
+            <h3><i>Popular Recipe Types</i></h3>
+            <a href="#" class="list-group-item">All Grain Recipes<span class="badge"><%= Recipe.where({ :brew_type => "All-Grain!"}).count %></span></a>
+            <a href="#" class="list-group-item">Mini Mash/Partial Grain Recipes<span class="badge"><%= Recipe.where({ :brew_type => "Partial or Mini-Mash"}).count %></span></a>
+            <a href="#" class="list-group-item">Extract with Specialty Grain Recipes<span class="badge"><%= Recipe.where({ :brew_type => "Extract w/Special Grains"}).count %></span></a>
+            <a href="#" class="list-group-item">Extract Recipes<span class="badge"><%= Recipe.where({ :brew_type => "Extract"}).count %></span></a>
+
+          </div>
+        </div>
+
+<!--           <div align="center" class="col-md-6 col-lg-4">
+              <%#= image_tag "tbe.jpg", :height => '57%', :width => '57%' %>
+            <h4 align="center">BREW. SHARE. ENJOY!</h4>
+          </div> -->
+
+    </div>
+
+      </div> <!-- End Row Div -- >
+
+    </div> <!-- end page header -->
+  </div>
+
