@@ -15643,3 +15643,330 @@ Started GET "/assets/tbe-95e32618ef469929ce070ae8e1daa5477e20c6f2b8356f6aed593dd
 
 
 Started GET "/assets/bootstrap/glyphicons-halflings-regular-fe185d11a49676890d47bb783312a0cda5a44c4039214094e7957b4c040ef11c.woff2" for ::1 at 2015-09-11 10:16:04 -0500
+
+
+Started POST "/users/sign_in" for ::1 at 2015-09-14 14:15:39 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UedbRzk54W5CGcRvGBvtPVsXn19wt2gljUwk06YqU6uUtgxX+7na8TFePRoYZ91BonNKu4/Jafz6h2imVXs0sQ==", "user"=>{"email"=>"a@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "a@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2015-09-10 22:09:15.356069"], ["current_sign_in_at", "2015-09-14 19:15:39.692424"], ["sign_in_count", 3], ["updated_at", "2015-09-14 19:15:39.695080"], ["id", 2]]
+  [1m[36m (9.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 278ms (ActiveRecord: 11.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-14 14:15:39 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?  [["user_id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?  [["user_id", 2]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = 2[0m
+  Rendered devise/registrations/edit.html.erb within layouts/application (389.9ms)
+Completed 200 OK in 1132ms (Views: 1127.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/js/bootstrap.min.js" for ::1 at 2015-09-14 14:15:40 -0500
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.5ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.6ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (162.0ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (78.1ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (155.9ms)
+
+
+Started GET "/recipes" for ::1 at 2015-09-14 14:15:43 -0500
+Processing by RecipesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35mStyle Load (1.6ms)[0m  SELECT "styles".* FROM "styles"
+  Rendered recipes/_form.html.erb (59.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered recipes/index.html.erb within layouts/application (70.2ms)
+Completed 200 OK in 384ms (Views: 366.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/js/bootstrap.min.js" for ::1 at 2015-09-14 14:15:44 -0500
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (7.9ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (143.5ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (45.5ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (101.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2015-09-14 14:15:50 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"s0zj2saSkScyB0hmn4L4lJU23H1lLoGwqpmd/rXEC33dqFYaPQCA+xncaeXRu9Xzvr1Y+jEW2iCoTtD7CWRqvQ=="}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2015-09-14 14:15:50 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+Completed 401 Unauthorized in 1ms
+
+
+Started GET "/users/sign_in" for ::1 at 2015-09-14 14:15:50 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (14.6ms)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users"[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "recipes"
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "batches"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."style_id" = ?  [["style_id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."style_id" = ?[0m  [["style_id", 10]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."style_id" = ?  [["style_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."style_id" = ?[0m  [["style_id", 6]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."style_id" = ?  [["style_id", 3]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."brew_type" = ?[0m  [["brew_type", "All-Grain!"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."brew_type" = ?  [["brew_type", "Partial or Mini-Mash"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."brew_type" = ?[0m  [["brew_type", "Extract w/Special Grains"]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."brew_type" = ?  [["brew_type", "Extract"]]
+  Rendered devise/sessions/new.html.erb within layouts/application (67.5ms)
+Completed 200 OK in 372ms (Views: 367.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/js/bootstrap.min.js" for ::1 at 2015-09-14 14:15:51 -0500
+
+ActionController::RoutingError (No route matches [GET] "/users/js/bootstrap.min.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.7ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (117.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (54.1ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (112.4ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2015-09-14 14:15:57 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ubfkBCLzQbpvTHpwFNb4EZ5b63oGeo1d/SRr6ZqICFaI8NVGNSBde3DdgQB3EejgitE/1QjlDy21iWANYnZ6gg==", "user"=>{"email"=>"b@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "b@example.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2015-09-14 19:15:57.229104"], ["sign_in_count", 2], ["updated_at", "2015-09-14 19:15:57.230691"], ["id", 3]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 118ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2015-09-14 14:15:57 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "batches" WHERE "batches"."user_id" = ?  [["user_id", 3]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = 3[0m
+  [1m[35mStyle Load (0.2ms)[0m  SELECT  "styles".* FROM "styles" WHERE "styles"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered devise/registrations/edit.html.erb within layouts/application (74.0ms)
+Completed 200 OK in 514ms (Views: 510.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/js/bootstrap.min.js" for ::1 at 2015-09-14 14:15:57 -0500
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.7ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (131.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (50.2ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (117.7ms)
+
+
+Started GET "/recipes" for ::1 at 2015-09-14 14:15:59 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?  [["user_id", 3]]
+  [1m[36mStyle Load (0.5ms)[0m  [1mSELECT "styles".* FROM "styles"[0m
+  Rendered recipes/_form.html.erb (35.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "recipes" WHERE "recipes"."user_id" = ?  [["user_id", 3]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 3]]
+  [1m[35mStyle Load (0.1ms)[0m  SELECT  "styles".* FROM "styles" WHERE "styles"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered recipes/index.html.erb within layouts/application (44.0ms)
+Completed 200 OK in 352ms (Views: 347.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/js/bootstrap.min.js" for ::1 at 2015-09-14 14:16:00 -0500
+
+ActionController::RoutingError (No route matches [GET] "/js/bootstrap.min.js"):
+  actionpack (4.2.0) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.0) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.0) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.1) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.1) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.1) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.0) lib/rails/engine.rb:518:in `call'
+  railties (4.2.0) lib/rails/application.rb:164:in `call'
+  rack (1.6.1) lib/rack/lock.rb:17:in `call'
+  rack (1.6.1) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.1) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/pmac/.rvm/rubies/ruby-2.2.0/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_route.html.erb (6.1ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (119.0ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (45.2ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/pmac/.rvm/gems/ruby-2.2.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (100.5ms)
