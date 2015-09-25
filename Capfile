@@ -1,9 +1,3 @@
-require 'capistrano/bundler'
-require 'capistrano/rvm'
-require 'capistrano/rails/assets' # for asset handling add
-require 'capistrano/rails/migrations' # for running migrations
-require 'capistrano/puma'
-
 # Load DSL and set up stages
 require 'capistrano/setup'
 
@@ -20,7 +14,13 @@ require 'capistrano/deploy'
 #   https://github.com/capistrano/bundler
 #   https://github.com/capistrano/rails
 #   https://github.com/capistrano/passenger
-#
+
+require 'capistrano/bundler'
+require 'capistrano/rvm'
+require 'capistrano/rails/assets' # for asset handling add
+require 'capistrano/rails/migrations' # for running migrations
+require 'capistrano/puma'
+
 # require 'capistrano/rvm'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
