@@ -6,6 +6,7 @@ require 'capistrano/deploy'
 
 # Include all Rails tasks
 require 'capistrano/rails'
+require 'capistrano-passenger'
 
 # Include tasks from other gems included in your Gemfile
 #

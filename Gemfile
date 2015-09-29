@@ -4,14 +4,6 @@ source 'https://rubygems.org'
 
 gem 'activeadmin', github: 'activeadmin'
 
-gem 'therubyracer', platforms: :ruby, group: :production
-
-#Use PostgreSQL in production
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-
 gem 'font-awesome-sass'
 
 gem 'bootstrap-sass'
@@ -29,22 +21,40 @@ gem 'kaminari'
 gem 'foreigner'
 
 
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: [:development, :test]
 
+# See https://github.com/sstephenson/execjs#readme...
+gem 'therubyracer', platforms: :ruby, group: :production
+
+# Access an IRB console on exception pages or by using <%= console %> in views
+gem 'web-console', '~> 2.0', group: [:development, :test]
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+gem 'spring', group: [:development, :test]
+# Call 'byebug' anywhere in the code to stop execution and get a debugger console
+gem 'byebug', group: [:development, :test]
+
+# Use PostgreSQL in production
+gem 'pg', group: :production
+
+# Use Rails 12 factor in production
+gem 'rails_12factor'
+
+# Use Capistrano for deplohment
 gem 'capistrano-rails', group: :development
+
+# gem 'capistrano'
+# gem 'capistrano3-puma'
+# gem 'capistrano-rails', require: false
+# gem 'capistrano-bundler', require: false
+# gem 'capistrano-rvm'
+gem 'capistrano-passenger'
 
 gem 'figaro'
 gem 'puma'
 
-# group :development do
-#   # gem 'sqlite3'
-#   # gem 'capistrano-rails'
-# end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -69,25 +79,4 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# gem 'capistrano'
-gem 'capistrano3-puma'
-# gem 'capistrano-rails', require: false
-# gem 'capistrano-bundler', require: false
-gem 'capistrano-rvm'
-
-
-
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-end
 
