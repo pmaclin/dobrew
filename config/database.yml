@@ -28,5 +28,5 @@ production:
   username: ubuntu
   password:
 
-  # <<: *default
-  # database: db/production.sqlite3
+  <<: *default
+  database: db/production.sqlite3
