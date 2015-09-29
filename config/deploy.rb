@@ -2,7 +2,7 @@
 lock '3.4.0'
 
 set :application, 'dobrew'
-set :repo_url, 'git@github.com:me/pmaclin/dobrew.git'
+set :repo_url, 'https://github.com/pmaclin/dobrew.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -58,7 +58,7 @@ set :puma_preload_app, false
 namespace :deploy do
 
   after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
+    on roles(:app), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       # within release_path do
         execute :rake, 'cache:clear'
