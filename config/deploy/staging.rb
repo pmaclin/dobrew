@@ -1,10 +1,3 @@
-server 'ec2-52-23-211-164.compute-1.amazonaws.com',
-  user: 'ubuntu', roles: %w{web app db}
-
-set :ssh_options, {
-  keys: '/Users/pmac/Downloads/DoYouBrewDev.pem'
-}
-
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.

@@ -10,7 +10,7 @@ set :branch, :master
 
 # Default deploy_to directory is /var/www/my_app_name
 # set :deploy_to, '/var/www/my_app_name'
-set :deploy_to, 'home/deploy/dobrew'
+set :deploy_to, '/var/www/dobrew'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -61,7 +61,7 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       # within release_path do
-      #   execute :rake, 'cache:clear'
+        execute :rake, 'cache:clear'
       # end
     end
   end

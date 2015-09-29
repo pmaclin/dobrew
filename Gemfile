@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'therubyracer', platforms: :ruby, group: :production
+
+#Use PostgreSQL in production
 group :production do
   gem 'pg'
   gem 'rails_12factor'
@@ -26,16 +29,19 @@ gem 'kaminari'
 gem 'foreigner'
 
 
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
+gem 'sqlite3', group: [:development, :test]
 
 gem 'figaro'
 gem 'puma'
 
 group :development do
-  gem 'sqlite3'
+  # gem 'sqlite3'
+  gem 'capistrano-rails'
 end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -66,7 +72,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'capistrano'
 gem 'capistrano3-puma'
-gem 'capistrano-rails', require: false
+# gem 'capistrano-rails', require: false
 gem 'capistrano-bundler', require: false
 gem 'capistrano-rvm'
 
