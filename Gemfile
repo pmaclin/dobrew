@@ -43,13 +43,14 @@ gem 'pg', group: :production
 gem 'rails_12factor'
 
 # Use Capistrano for deplohment
-gem 'capistrano-rails', group: :development
+# gem 'capistrano-rails', group: :development
+gem 'capistrano', '~> 3.4.0', group: :development
 
 # gem 'capistrano'
-# gem 'capistrano3-puma'
-# gem 'capistrano-rails', require: false
-# gem 'capistrano-bundler', require: false
-# gem 'capistrano-rvm'
+gem 'capistrano3-puma'
+gem 'capistrano-rails', require: false
+gem 'capistrano-bundler', require: false
+gem 'capistrano-rvm'
 gem 'capistrano-passenger'
 
 gem 'figaro'
