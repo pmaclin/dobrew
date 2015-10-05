@@ -47,7 +47,7 @@ namespace :deploy do
 
 # end
 
-set :passenger_restart_with_touch, true
+# set :passenger_restart_with_touch, true
 
 desc 'Restart application'
   task :restart do
