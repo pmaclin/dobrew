@@ -6,16 +6,6 @@ set :ssh_options, {
   keys: '/Users/pmac/Downloads/DoYouBrewDev.pem'
 }
 
-# - web:
-#   prod.example.com
-#   roman@prod.example.com
-# - app:
-#   prod.example.com
-#   roman@prod.example.com
-# - db:
-#   prod.example.com
-#   roman@prod.example.com
-
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
