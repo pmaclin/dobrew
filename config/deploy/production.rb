@@ -1,8 +1,7 @@
-# server 'ec2-52-23-211-164.compute-1.amazonaws.com',
-#   user: 'ubuntu', roles: %w{web app db}
+server 'ec2-52-23-211-164.compute-1.amazonaws.com',
+  user: 'ubuntu', roles: %w{web app db}
 
-server 'ec2-52-23-211-164.compute-1.amazonaws.com', roles: [:web :app :db], user: 'ubuntu'
-
+# server 'ec2-52-23-211-164.compute-1.amazonaws.com', roles: [:web :app :db] user: 'ubuntu'
 
 set :ssh_options, {
   keys: '/Users/pmac/Downloads/DoYouBrewDev.pem'
