@@ -44,7 +44,7 @@ gem 'rails_12factor'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'capistrano-rails', '~> 1.1.1', group: :development
+gem 'capistrano-rails', '~> 3.4.0', group: :development
 
 # gem 'capistrano'
 gem 'capistrano3-puma'
