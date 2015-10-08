@@ -7,15 +7,7 @@
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
-role :app, %w{deploy@172.31.49.242}
-role :web, %w{deploy@172.31.49.242}
-role :db, %w{deploy@172.31.49.242}
 
-
-# With the Public DNS Name
-# role :app, %w{deploy@ec2-52-23-211-164.compute-1.amazonaws.com}
-# role :web, %w{deploy@ec2-52-23-211-164.compute-1.amazonaws.com}
-# role :db, %w{deploy@ec2-52-23-211-164.compute-1.amazonaws.com}
 
 # role-based syntax
 # ==================
@@ -28,6 +20,8 @@ role :db, %w{deploy@172.31.49.242}
 # role :app, %w{deploy@example.com}, my_property: :my_value
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
+
+
 
 # Configuration
 # =============

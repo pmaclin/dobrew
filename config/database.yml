@@ -21,12 +21,16 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  database: dobrew_production
-  pool: 5
-  username: ubuntu
-  password:
-
   <<: *default
-  database: db/production.sqlite3
+  database: dobrew_production
+  # adapter: postgresql
+  # encoding: unicode
+  # database: dobrew_production
+  # pool: 5
+  # username: ubuntu
+  # password:
+
+  # <<: *default
+  # database: db/production.sqlite3
+
+

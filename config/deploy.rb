@@ -2,14 +2,16 @@
 lock '3.4.0'
 
 set :application, 'dobrew'
-set :repo_url, 'https://github.com/pmaclin/dobrew.git'
+set :repo_url, 'git@github.com:pmaclin/dobrew.git'
+set :deploy_to, 'opt/www/dobrew'
+set :user, 'deploy'
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-set :branch, 'master'
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/var/www/dobrew'
+# set :deploy_to, '/var/www/my_app_name'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -37,27 +39,24 @@ set :deploy_to, '/var/www/dobrew'
 
 namespace :deploy do
 
-#   after :restart, :clear_cache do
-#     on roles(:web), in: :groups, limit: 3, wait: 10 do
-#       # Here we can do anything such as:
-#       # within release_path do
-#       #   execute :rake, 'cache:clear'
-#       # end
-#     end
-#   end
-
-# end
-
-# set :passenger_restart_with_touch, true
-
-desc 'Restart application'
-  task :restart do
-      on roles(:app), in: :sequence, wait: 5 do
-        # Your restart mechanism here, for example:
-        execute :touch, release_path.join('tmp/restart.txt')
+  %w[start stop restart].each do |command|
+    desc 'Manage Unicorn'
+    task command do
+      on roles(:app), in: :sequence, wait: 1 do
+        execute "/etc/init.d/unicorn_#{fetch(:application)} #{command}"
       end
     end
-
-    after :publishing, :restart
-
   end
+
+  after :publishing, :restart
+
+  # after :restart, :clear_cache do
+  #   on roles(:web), in: :groups, limit: 3, wait: 10 do
+  #     # Here we can do anything such as:
+  #     # within release_path do
+  #     #   execute :rake, 'cache:clear'
+  #     # end
+  #   end
+  # end
+
+end
