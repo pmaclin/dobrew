@@ -13,9 +13,9 @@
 
 
 # With the Public DNS Name
-role :app, %w{deploy@ec2-52-23-211-164.compute-1.amazonaws.com}
-role :web, %w{deploy@ec2-52-23-211-164.compute-1.amazonaws.com}
-role :db, %w{deploy@ec2-52-23-211-164.compute-1.amazonaws.com}
+role :app, %w{deploy@54.172.168.13}
+role :web, %w{deploy@54.172.168.13}
+role :db, %w{deploy@54.172.168.13}
 
 # role-based syntax
 # ==================
