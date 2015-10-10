@@ -13,9 +13,9 @@
 
 
 # With the Public DNS Name
-role :app, %w{deploy@54.172.168.13}
-role :web, %w{deploy@54.172.168.13}
-role :db, %w{deploy@54.172.168.13}
+role :app, %w{deploy@54.172.68.13}
+role :web, %w{deploy@54.172.68.13}
+role :db, %w{deploy@54.172.68.13}
 
 # role-based syntax
 # ==================
