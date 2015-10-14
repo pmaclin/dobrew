@@ -3,7 +3,7 @@ lock '3.4.0'
 
 set :application, 'dobrew'
 set :repo_url, 'https://github.com/pmaclin/dobrew.git'
-set :deploy_to, 'opt/www/dobrew'
+set :deploy_to, '/opt/www/dobrew'
 set :user, 'deploy'
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets}
 
