@@ -42,7 +42,10 @@ gem 'pg', group: :production
 gem 'rails_12factor'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv', '~> 2.0', require: false
+end
 # gem 'capistrano-rails', '~> 1.1.1', group: :development
 
 # gem 'capistrano'
