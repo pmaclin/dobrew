@@ -1,46 +1,46 @@
   <div class="page-header">
     <div class="container">
 
-            <div id="tbe-carousel" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#tbe-carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#tbe-carousel" data-slide-to="1"></li>
-                <li data-target="#tbe-carousel" data-slide-to="2"></li>
-                <li data-target="#tbe-carousel" data-slide-to="3"></li>
-              </ol>
+      <div id="tbe-carousel" class="carousel slide" data-ride="carousel" class="col-sm-12 col-md-6 col-lg-12">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#tbe-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#tbe-carousel" data-slide-to="1"></li>
+            <li data-target="#tbe-carousel" data-slide-to="2"></li>
+            <li data-target="#tbe-carousel" data-slide-to="3"></li>
+          </ol>
 
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner">
-                <div class="item active">
-                  <%= image_tag "6.jpg" %>
-                  <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
-                  <div class="carousel-caption">
-                      <!-- <h3>Do You Brew?</h3> -->
-                  </div>
-                </div>
-                <div class="item">
-                  <%= image_tag "4.jpg" %>
-                  <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
-                  <div class="carousel-caption">
-                      <!-- <h3>Caption Text 2</h3> -->
-                  </div>
-                </div>
-                <div class="item">
-                  <%= image_tag "8.jpg" %>
-                  <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
-                  <div class="carousel-caption">
-                      <!-- <h3 align="right">King Hop</h3> -->
-                  </div>
-                </div>
-                <div class="item">
-                  <%= image_tag "7.jpg" %>
-                  <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
-                  <div class="carousel-caption">
-                      <!-- <h3>Caption Text 4</h3> -->
-                  </div>
-                </div>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <%= image_tag "6.jpg" %>
+              <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
+              <div class="carousel-caption">
+                  <!-- <h3>Do You Brew?</h3> -->
               </div>
+            </div>
+            <div class="item">
+              <%= image_tag "4.jpg" %>
+              <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
+              <div class="carousel-caption">
+                  <!-- <h3>Caption Text 2</h3> -->
+              </div>
+            </div>
+            <div class="item">
+              <%= image_tag "8.jpg" %>
+              <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
+              <div class="carousel-caption">
+                  <!-- <h3 align="right">King Hop</h3> -->
+              </div>
+            </div>
+            <div class="item">
+              <%= image_tag "7.jpg" %>
+              <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
+              <div class="carousel-caption">
+                  <!-- <h3>Caption Text 4</h3> -->
+              </div>
+            </div>
+          </div>
 
               <!-- Controls -->
               <a class="left carousel-control" href="#tbe-carousel" role="button" data-slide="prev">
@@ -49,9 +49,11 @@
               <a class="right carousel-control" href="#tbe-carousel" role="button" data-slide="next">
                 <span class="glyphicon glyphicon-chevron-right"></span>
               </a>
-            </div> <!-- Carousel -->
+
+        </div> <!-- Carousel -->
     <hr>
-      <div class="row">
+      <div class="row"> <!-- Row One - Uppper Row -->
+      <!-- Left Column -->
           <div align="center" class="col-md-6 col-lg-9">
             <h1 align="center"><i>"You Are The Brewmaster!"</i></h1>
             <br>
@@ -66,13 +68,14 @@
               <h4 align="left"><font color="navy"><i>"No submissions. No deadlines. No waiting to hear nothing back from a judge!"</i></font></h4>
               <p align="left">If you've ever entered your beer in a competition you usually will never get any valuable feedback from the judges unless you win, place or show. Never that here. This is about the beer, the brewer and the fans! You're going to give your beer away anyway - You might as well find out what people really think about your creations.</p>
               <br>
-              <h4 align="left"><font color="navy"><i>"Awesome! But how much will it cost me?"</i></font></h4>
+              <h4 align="left"><font color="navy"><i>"Awesome! But how much will it co$t me?"</i></font></h4>
               <p align="left">Free. Home brewers will be able to generate up to 24 unique numbers for every batch of beer created (in increments of 6 numbers at a time). Upload an unlimited number of recipes. Create an unlimited number of batches. Create several batches of the same recipe and compare the feedback. Tweak your recipes and processes and <i><u><u>raise</u></u> <u>your</u> <u>game!</u></i></p>
           </div>
 
-        <div class="col-sm-6 col-md-6 col-lg-3">
-        <h2>Log in</h2>
-        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <!-- Right Column -->
+        <div align="left" class="col-sm-6 col-md-6 col-lg-3">
+          <h2>Log in</h2>
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
               <%= f.input :email, required: false, autofocus: true %>
               <%= f.input :password, required: false %>
@@ -81,53 +84,68 @@
             <div class="form-actions">
               <%= f.button :submit, "Log in" %>
             </div>
-            <% end %>
-
+        <% end %>
           <%= render "devise/shared/links" %>
-
-          <div align="center" class="col-md-6 col-lg-12">
-              <%= image_tag "tbe.jpg", :height => '100%', :width => '100%' %>
-            <h4 align="center">BREW. SHARE. ENJOY!</h4>
+          <div align="center" class="col-sm-6 col-md-6 col-lg-12">
+            <%= image_tag "tbe.jpg", :height => '100%', :width => '100%' %>
+            <h4>BREW. SHARE. ENJOY!</h4>
           </div>
-
-
         </div>
+
+
       </div> <!-- end div row -->
+
     <hr>
 
-    <div class="row">
+    <div class="row"> <!-- Row Two - Lower Row -->
+    <a href="#" class="list-group-item active"><h3>What's Brewing on The Brewer's Edge?</h3><span class="badge"></span></a>
 
-        <div class="col-xs-12 col-md-3 col-lg-12">
+    <!-- Row Two/Column One -->
+        <div class="col-xs-12 col-md-3 col-lg-4">
           <div class="list-group">
-            <a href="#" class="list-group-item active"><h3>
-            What's Brewing on The Brewer's Edge?</h3><span class="badge"></span>
-            </a>
-            <a href="#" class="list-group-item">Members <span class="badge"><%= User.count %></span></a>
+            <h3><i>Recipes & Batches</i></h3>
+            <!-- <a href="#" class="list-group-item">Members <span class="badge"><%#= User.count %></span></a> -->
             <a href="#" class="list-group-item">Recipes Uploaded <span class="badge"><%= Recipe.count %></span></a>
             <a href="#" class="list-group-item">Batches Made<span class="badge"><%= Batch.count %></span></a>
-            <h3><i>Most Popular Recipe Styles</i></h3>
-            <a href="#" class="list-group-item">American Stout Recipes <span class="badge"><%= Recipe.where({ :style_id => "1" }).count %></span></a>
-            <a href="#" class="list-group-item">Imperial IPA Recipes <span class="badge"><%= Recipe.where({ :style_id => "10" }).count %></span></a>
-            <a href="#" class="list-group-item">American Wheat Recipes <span class="badge"><%= Recipe.where({ :style_id => "2" }).count %></span></a>
-            <a href="#" class="list-group-item">Barleywine Recipes <span class="badge"><%= Recipe.where({ :style_id => "6" }).count %></span></a>
-            <a href="#" class="list-group-item">Amber/Red Ale Recipes <span class="badge"><%= Recipe.where({ :style_id => "3" }).count %></span></a>
-            <h3><i>Popular Recipe Types</i></h3>
-            <a href="#" class="list-group-item">All Grain Recipes<span class="badge"><%= Recipe.where({ :brew_type => "All-Grain!"}).count %></span></a>
-            <a href="#" class="list-group-item">Mini Mash/Partial Grain Recipes<span class="badge"><%= Recipe.where({ :brew_type => "Partial or Mini-Mash"}).count %></span></a>
-            <a href="#" class="list-group-item">Extract with Specialty Grain Recipes<span class="badge"><%= Recipe.where({ :brew_type => "Extract w/Special Grains"}).count %></span></a>
-            <a href="#" class="list-group-item">Extract Recipes<span class="badge"><%= Recipe.where({ :brew_type => "Extract"}).count %></span></a>
+          </div> <!-- End list group -->
+        </div> <!-- End Column -->
 
-          </div>
-        </div>
+    <!-- Row Two/Column Two -->
+        <div class="col-xs-12 col-md-3 col-lg-4">
+            <!-- Content  -->
+            <div class="list-group">
+              <h3><i>Styles</i></h3>
+              <a href="#" class="list-group-item">American Stout Recipes <span class="badge"><%= Style.where({ :name => "American Stout" }).count %></span></a>
+              <a href="#" class="list-group-item">Imperial IPA Recipes <span class="badge"><%= Style.where({ :name => "Imperial IPA" }).count %></span></a>
+              <a href="#" class="list-group-item">American Wheat Recipes <span class="badge"><%= Style.where({ :name => "American Wheat" }).count %></span></a>
+              <a href="#" class="list-group-item">Barleywine Recipes <span class="badge"><%= Style.where({ :name => "Barleywine" }).count %></span></a>
+              <a href="#" class="list-group-item">Amber/Red Ale Recipes <span class="badge"><%= Style.where({ :name => "Amber/Red Ale" }).count %></span></a>
+            </div>  <!-- End List Group -->
+        </div>  <!-- End Col Two -->
+
+    <!-- Row Two/Column Three -->
+        <div class="col-xs-12 col-md-3 col-lg-4">
+            <!-- Content -->
+            <div class="list-group">
+              <h3><i>Types</i></h3>
+              <a href="#" class="list-group-item">All Grain Recipes<span class="badge"><%= Recipe.where({ :brew_type => "All-Grain!"}).count %></span></a>
+              <a href="#" class="list-group-item">Mini Mash/Partial Grain Recipes<span class="badge"><%= Recipe.where({ :brew_type => "Partial or Mini-Mash"}).count %></span></a>
+              <a href="#" class="list-group-item">Extract with Specialty Grain Recipes<span class="badge"><%= Recipe.where({ :brew_type => "Extract w/Special Grains"}).count %></span></a>
+              <a href="#" class="list-group-item">Extract Recipes<span class="badge"><%= Recipe.where({ :brew_type => "Extract"}).count %></span></a>
+            </div> <!-- End List Group -->
+        </div>  <!-- End Col Three -->
+
+
+
 
 <!--           <div align="center" class="col-md-6 col-lg-4">
               <%#= image_tag "tbe.jpg", :height => '57%', :width => '57%' %>
             <h4 align="center">BREW. SHARE. ENJOY!</h4>
           </div> -->
 
-    </div>
+    </div> <!-- End Div Row 2 -->
 
-      </div> <!-- End Row Div -- >
+      </div> <!-- End Page Container -- >
 
     </div> <!-- end page header -->
   </div>

@@ -4,44 +4,44 @@
   <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
     <div class="panel panel-primary">
       <div class="panel-heading">
-        <h3 class="panel-title">Recipe Name: <%= @recipe.name %></h3>
+        <h3 class="panel-title">Recipe Name: <%= @recipe.name %></h3><small>RECIPE TARGETS</small>
       </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-12">
             <dl class="dl-horizontal">
 
-              <dt>Brew type</dt>
+              <dt><font color="darkblue">BREW TYPE:</font></dt>
               <dd><%= @recipe.brew_type %></dd>
 
-              <dt>Description</dt>
+              <dt><font color="darkblue">DESCRIPTION:</font></dt>
               <dd><%= @recipe.description %></dd>
 
-              <dt>Target Original</dt>
+              <dt><font color="darkblue">O.G.:</font></dt>
               <dd><%= @recipe.tog %></dd>
 
-              <dt>Target Final Gravity</dt>
+              <dt><font color="darkblue">F.G.:</font></dt>
               <dd><%= @recipe.tfg %></dd>
 
-              <dt>Tabv</dt>
+              <dt><font color="darkblue">A.B.V.:</font></dt>
               <dd><%= @recipe.tabv %></dd>
 
-              <dt>Target Aroma</dt>
+              <dt><font color="darkblue">AROMA:</font></dt>
               <dd><%= @recipe.taroma %></dd>
 
-              <dt>Target IBUs</dt>
+              <dt><font color="darkblue">I.B.U.s:</font></dt>
               <dd><%= @recipe.tibu %></dd>
 
 <!--               <dt>Label</dt>
               <dd><%#= @recipe.label %></dd> -->
 
-              <dt>Target Flavor Profile</dt>
+              <dt><font color="darkblue">FLAVOR PROFILE:</font></dt>
               <dd><%= @recipe.tflavpro %></dd>
 
-              <dt>User</dt>
-              <dd><%= @recipe.user.email %></dd>
+              <!-- <dt>User</dt> -->
+              <dd><%#= @recipe.user.email %></dd>
 
-              <dt>Style</dt>
+              <dt><font color="darkblue">STYLE:</font></dt>
               <dd><%= @recipe.style.name %></dd>
 
 <!--               <dt>Published?</dt>

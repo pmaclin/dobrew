@@ -1,15 +1,46 @@
 <div class="page-header">
   <div class="row">
-    <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+
+
+    <div class="col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-8">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Create a new Batch from the <%= @batch.recipe.name %> recipe.</h3>
-          <h5>While the recipe is the target, batch values are the actual values of the brewed batch of beer. These may differ from the recipe's values. Include those actual values here.  Basically tell us how the batch of beer turned out. Cite the target values from the recipe for comparison.</h5>
+          <small>While the recipe is the goal, batch values are the <i>actual</i> values of the finished batch of beer and may differ from the recipe's target values. Include those actual values here.  Tell your fans how the batch of beer turned out and cite the target values from the recipe for comparison.</small>
         </div>
         <div class="panel-body">
           <%= render 'form', batch: @batch %>
         </div>
       </div>
     </div>
-  </div>
-</div>
+
+<!-- Right Column - HB101 -->
+    <div class="col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-4 col-lg-4">
+      <div "panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title" align="center"><font color="darkblue"><b>HOME BREWING 101</b></font><p><b><large>The Beer Scoresheet</large></b></p></h3>
+        </div> <!-- div panel heading -->
+        <div class "panel-body">
+          <font size="3">
+          <p>When you submit your home brew into an AHA/BJCP sanctioned competition it will be judged on several criteria, including:</p>
+          <ul>
+            <li><b>Bottle Inspection:</b> Judges will want the beer's bottle size to be as requested. They'll also check things like cap, fill level and cleanliness of the bottle.</li>
+            <li><b>Aroma:</b> Are characteristics of the beer coming thru as appropriate for the style? Check that your malts, hops, esters and other aromatics are style appropriate, and accurately leveled.</li>
+            <li><b>Appearance:</b> Make sure the color, clarity of the beer and head are appropriate for the style. The head will be looked at closely to make sure its retention, color and texture are right for the style.</li>
+            <li><b>Flavor:</b> Judges will comment on flavor characteristics such as malt, hops, fermentation characteristics, balance, finish/aftertaste, and other flavor characteristics. This is the single largest category to be considered, so make sure your finished product comes out as intended.</li>
+            <li><b>Mouthfeel:</b> This refers to the body, carbonation, perceived warmth, creaminess, astringency and other sensations on the palate. Mouthfeel leaves a lasting impression so make sure you get this one on point.</li>
+            <li><b>Overall Impression:</b> The judge's overall drinking pleasure counts for something here. In this space, judges often give suggestions for improvement.</li>
+
+            <br>Think about these things the next time you make a batch to a specific style of beer. Refer to the BJCP for style standards and check out the Popular Beer Styles link for examples.
+
+            <br>Good Luck and Good Brewing!
+
+            </font>
+          </ul>
+        </div> <!-- panel body end -->
+      </div> <!-- div panel default end -->
+    </div> <!-- div column end -->
+
+
+  </div> <!-- end row -->
+</div> <!-- end header -->

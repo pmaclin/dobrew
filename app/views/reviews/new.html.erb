@@ -6,11 +6,12 @@
 
 <div class="page-header">
   <div class="row">
+
     <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">New Review for batch/brew id# <%= @review.batch_id %> | <%= @review.batch.recipe.name %></h3>
-          <p><i>Inspired by the style: <font color="red"><%#= @review.batch.recipe.style.name %></font></i></p>
+          <p><i>Inspired by the style: <font color="red"><%= @review.batch.recipe.style.name %></font></i></p>
           <p><i>Using Brew Number: <font color="blue"><%= @review.batch.matched %></font></i></p>
           <br>
           <p><i>"Keep in mind that you're reviewing this brewer's beer based on your overall experience. In comparison, a professional beer judge would judge this beer based on several factors including aroma, appearance, flavor and mouthfeel!"</i></p>
@@ -21,6 +22,23 @@
         </div>
 
       </div> <!-- end panel -->
+
+      <h3>HOME BREWING 101</h3>
+      <i><b>THE BEER SCORESHEET</b></i>
+      <p><b>Did you know...</b>that when you submit your beer into an AHA/BJCP sanctioned competition it will be judged on several criteria, including:</p>
+      <ol>
+        <li><b>Bottle Inspection:</b> Judges will want the beer's bottle size to be as requested. They'll also check things like cap, fill level and cleanliness of the bottle. So remember, if you've got an old label on there, remove it completely so you're not dinged on this! The next few are way more obvious.</li>
+        <li><b>Aroma:</b> Are characteristics of the beer coming thru as appropriate for the style? Check that your malts, hops, esters and other aromatics are style appropriate, and accurately leveled. Any more or less for the style and you'll defintely get dinged.</li>
+        <li><b>Appearance:</b> Make sure the color, clarity of the beer and head are appropriate for the style. The head will be looked at closely to make sure its retention, color and texture are right for the style.</li>
+        <li><b>Flavor:</b> This one is obvious. Judges will comment on flavor characteristics such as malt, hops, fermentation characteristics, balance, finish/aftertaste, and other flavor characteristics. Make sure you're matching the style. Something "off" with flavor will hurt your final score significatly as this is the single largest category to be considered.</li>
+        <li><b>Mouthfeel:</b> Comment on the body, carbonation, warmth, creaminess, astringency and other sensations on the palate.</li>
+        <li><b>Overall Impression:</b> Every beer won't fit perfectly into one of the 71 standards so the judge's overall drinking pleasure counts for something here. Is your beer wonderful or lifeless? Is it technically flawless or does it have significant flaws? In this space, judges may give suggestions for improvement.</li>
+        <br>All of these factors, and others, will be used to score your beer. Your success is relative to all of the other beers entered into that contest. Think about these things the next time you make a batch to a specific style. Do you have the right malts? Did you appropriately sparge your grain? Did you add your hops at the right times? All of this plays a role if your objective is to score big at the next AHA/BJCP sanctioned competition.</br>
+        </ol>
+        <p>
+          <b><i>Good luck and Good Brewing!</i></b>
+        </p>
+
     </div> <!-- end column -->
   </div> <!-- end row -->
 </div> <!-- end page header -->

@@ -33,5 +33,5 @@ production:
   # <<: *default
   # database: db/production.sqlite3
 
-sqlite: &sqlite
-  adapter
+# sqlite: &sqlite
+#   adapter

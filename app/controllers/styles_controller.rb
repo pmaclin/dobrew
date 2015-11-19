@@ -5,7 +5,8 @@ class StylesController < ApplicationController
   # GET /styles
   # GET /styles.json
   def index
-    @styles = Style.order("name ASC").page(params[:page]).per(7)
+    # @styles = Style.order("name ASC").page(params[:page]).per(7)
+    @styles = Style.order("name ASC")
   end
 
   # GET /styles/1

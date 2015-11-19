@@ -1,14 +1,18 @@
 <div class="page-header">
   <div class="row">
-    <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+
+<!--   Left Column - Edit Batch -->
+    <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 col-lg-8">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Edit Batch #<%= @batch.id %></h3>
-        </div>
+        </div> <!-- div panel heading -->
         <div class="panel-body">
           <%= render 'form', batch: @batch %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </div> <!-- div panel body -->
+      </div> <!-- div panel default -->
+    </div> <!-- div.col -->
+
+  </div> <!-- div row -->
+</div> <!-- panel header -->
+
