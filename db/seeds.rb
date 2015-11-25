@@ -1,3 +1,24 @@
+AdminUser.create!([
+  {email: "philmaclin@gmail.com", encrypted_password: "$2a$10$o5msE1DXNfzSoXpaHD26FOwbf1x0rehcp0COhdRxxOQoWSXutMWgS", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 10, current_sign_in_at: "2015-11-19 16:05:14", last_sign_in_at: "2015-11-19 16:02:09", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
+])
+Batch.create!([
+  {size: "5 gallons", brew_date: "1/7/2015", bottle_date: "3/6/2015", aog: 1.045, afg: 1.004, aabv: 5.7, aaroma: "Smokey", aibu: 45, image: "Screen_Shot_2015-05-27_at_10.31.52_AM.png", aflavpro: "Big mouthfeel", user_id: 1, recipe_id: 1, matched: 369816},
+  {size: "5 gallons", brew_date: "1/2/2014", bottle_date: "5/6/2014", aog: 1.046, afg: 1.005, aabv: 4.6, aaroma: "Sweet.", aibu: 64, image: nil, aflavpro: "Big flavor profile...", user_id: 3, recipe_id: 2, matched: 82261},
+  {size: "5 gallons", brew_date: "11/16/2013", bottle_date: "12/1/2014", aog: 1.045, afg: 1.004, aabv: 4.4, aaroma: "Sweet, flowery, slightly hoppy", aibu: 42, image: nil, aflavpro: "Creamy mouthfeel. Came out nicely balanced between cascade hop and malt bill.", user_id: 4, recipe_id: 4, matched: nil}
+])
+Recipe.create!([
+  {name: "Phil's Uncorked Ale", brew_type: "All-Grain!", description: "A big, full-bodied, heavy breasted English bitter.", tog: 1.073, tfg: 1.003, tabv: 7.8, taroma: "Big hop aroma up front coming form the late addition cascade and imperial hops used.", tibu: 48, label: nil, tflavpro: "Big mouthfeel, moderate carbonation, this bitter is similar to the ales produced in Europe in the 18th century.  Enjoy this in a pint glass.", user_id: 1, style_id: 495, is_active: true},
+  {name: "Beta brown sugar maple ale", brew_type: "Partial or Mini-Mash", description: "A deep brown, full-bodied ale that's very rich up front but with low abv.", tog: 1.047, tfg: 1.002, tabv: 4.6, taroma: "Malty, carmel, hints of toffee", tibu: 25, label: nil, tflavpro: "Big mouthfeel but low abv. Rich, dark brown in color. Slightly hoppy.", user_id: 3, style_id: 433, is_active: true},
+  {name: "Donnel's Hood Playa Ale", brew_type: "All-Grain!", description: "The kind of dark beer you'd drink on an ordinary day in the hood. ", tog: 1.061, tfg: 1.006, tabv: 7.2, taroma: "An aroma that'll knock you off your fee.", tibu: 42, label: nil, tflavpro: "I don't wanna bore you with my troubles...yeah.  But there's something 'bout your love that makes me weak and knocks me off my feet. ", user_id: 3, style_id: 476, is_active: true},
+  {name: "Gi Gi 2012", brew_type: "All-Grain!", description: "A rasberry wheat ale", tog: 1.045, tfg: 1.006, tabv: 4.5, taroma: "Fruity...hints of lemmon grass and rasberry and slight hop aroma.", tibu: 43, label: nil, tflavpro: "Light, wheat, session beer. Slightly cloudy. Best enjoyed in during the summer months.", user_id: 4, style_id: 428, is_active: true},
+  {name: "An American Dad's All American Stout", brew_type: "All-Grain!", description: "We'll add a description later.", tog: 1.09, tfg: 1.009, tabv: 9.7, taroma: "Smokey and bold", tibu: 86, label: nil, tflavpro: "Huge.", user_id: 2, style_id: 427, is_active: true}
+])
+Review.create!([
+  {headline: "A headline", content: "Some content", overall_rating: 2, user_id: 2, batch_id: 1, is_reviewed: true, matched: 369816},
+  {headline: "A headline for 443988", content: "Some content for 443988", overall_rating: 2, user_id: 2, batch_id: 2, is_reviewed: true, matched: 443988},
+  {headline: "#845864 - Here's a headline that I'm adding for this brew....", content: "#845864 - Here's some content that I'm adding for this brew...", overall_rating: 6, user_id: 4, batch_id: 2, is_reviewed: true, matched: 845864},
+  {headline: "#82261 - The headline part of this thing", content: "#82261 - The content part of this thing", overall_rating: 4, user_id: 2, batch_id: 2, is_reviewed: true, matched: 82261}
+])
 Style.create!([
   {name: "American Stout", std_flavor_profile: "Albeit a lesser version of it's Russian older and meaner brother, the American stout comes incredibly well balanced and without the fear of invading sovereign countries. ", com_ex_image: "https://greatbrewers.com/sites/default/files/images/Product%20-%20Goose%20Island%20Bourbon%20County%20Vanilla%20Stout.jpg"},
   {name: "American Wheat", std_flavor_profile: "Light, low abv, not heavy in the mouth. Often associated with spring and summer months. Can be hoppy.", com_ex_image: "http://assets-s3.mensjournal.com/img/essential/gumballhead/298_298_gumballhead.jpg"},
@@ -70,4 +91,25 @@ Style.create!([
   {name: "Spiced Beer", std_flavor_profile: "Any beer that is intentionally spiced to give the beer a distinct spicy finish above and beyond normal levels. These beer range in ABV percentage greatly. ", com_ex_image: "http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit,q_85,d_beer_def.gif/beer_52177.jpg"},
   {name: "Smoked Beer", std_flavor_profile: "A beer in which a smokey flavor\n   is distinct enough to classify the beer as a smoked beer instead of the style of beer in would generally be classified as. The smoke can be added in a number of different ways.", com_ex_image: "http://www.captainlawrencebrewing.com/wp-content/uploads/2012/12/brew_bottle_smokedporter.png"},
   {name: "Traditional Ale", std_flavor_profile: "Any beer brewed in an ancient or an antique style usually using recipes that are many centuries old.", com_ex_image: "https://s-media-cache-ak0.pinimg.com/originals/1d/00/de/1d00de312b80309c556f0c1e047d7223.jpg"}
+])
+Uni.create!([
+  {rand_num: 369816, batch_id: 1, user_id: 1, is_used: true},
+  {rand_num: 500069, batch_id: 1, user_id: 1, is_used: nil},
+  {rand_num: 983247, batch_id: 1, user_id: 1, is_used: nil},
+  {rand_num: 781905, batch_id: 1, user_id: 1, is_used: nil},
+  {rand_num: 210819, batch_id: 1, user_id: 1, is_used: nil},
+  {rand_num: 435767, batch_id: 1, user_id: 1, is_used: nil},
+  {rand_num: 921730, batch_id: 2, user_id: 3, is_used: true},
+  {rand_num: 443988, batch_id: 2, user_id: 3, is_used: true},
+  {rand_num: 845864, batch_id: 2, user_id: 3, is_used: true},
+  {rand_num: 82261, batch_id: 2, user_id: 3, is_used: true},
+  {rand_num: 975784, batch_id: 2, user_id: 3, is_used: nil},
+  {rand_num: 588626, batch_id: 2, user_id: 3, is_used: nil}
+])
+User.create!([
+  {email: "p1@example.com", encrypted_password: "$2a$10$9C6qGct6J1OJBk/zvoWHruE1duVvQdlw.dEiwo.ctMUY0HfePjshK", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2015-11-19 16:11:55", last_sign_in_at: "2015-09-02 18:50:27", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "pmac", you_brew: nil, city: nil, state: nil, avatar: nil, yrsexp: nil, quote: nil},
+  {email: "a@example.com", encrypted_password: "$2a$10$NUEo9i75inY2x4CaPB2MTuRbFWoOd/pegmzS6v.hzUxs9k.WTaBaO", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 11, current_sign_in_at: "2015-11-19 17:23:38", last_sign_in_at: "2015-11-19 16:11:26", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "alpha", you_brew: nil, city: nil, state: nil, avatar: nil, yrsexp: nil, quote: nil},
+  {email: "b@example.com", encrypted_password: "$2a$10$/n71WGxLc4vFLSxOyBZrUe3HazIU.X.E2aMq79MZyK2gUkMSyZDhi", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 5, current_sign_in_at: "2015-11-19 16:09:55", last_sign_in_at: "2015-11-17 19:03:34", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "beta", you_brew: nil, city: "Carpentersville", state: "GA", avatar: nil, yrsexp: 12, quote: "Brewing is the ultimate hobby. At the end of it, you have beer! What better way to spend your day?!"},
+  {email: "philmaclin@gmail.com", encrypted_password: "$2a$10$hb.yzbjqTHBSxTmORy8oXe4b1LMthMp8dcAt/mbLLjTLb2bxPfHBi", reset_password_token: "15f52f491b808334a719871fc0226df0329f3d0d36b008e312d63707d3039cf1", reset_password_sent_at: "2015-11-09 19:56:38", remember_created_at: nil, sign_in_count: 17, current_sign_in_at: "2015-11-19 16:09:39", last_sign_in_at: "2015-11-19 16:08:52", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "PhilMac", you_brew: nil, city: nil, state: nil, avatar: nil, yrsexp: nil, quote: nil},
+  {email: "philmaclin@hotmail.com", encrypted_password: "$2a$10$tgp/Duids7xIJ9OaEoY.heRBxa8GXZpyI.EqHYE1YIjney9aKCIdC", reset_password_token: "9f2ffbbd052b6329fb34078f21c64988e530ba0b5dd6d0551f1b8c98098b87f5", reset_password_sent_at: "2015-11-09 19:57:15", remember_created_at: nil, sign_in_count: 3, current_sign_in_at: "2015-11-19 16:09:08", last_sign_in_at: "2015-11-19 16:08:17", current_sign_in_ip: "::1", last_sign_in_ip: "::1", username: "Phillymac", you_brew: nil, city: nil, state: nil, avatar: nil, yrsexp: nil, quote: nil}
 ])
