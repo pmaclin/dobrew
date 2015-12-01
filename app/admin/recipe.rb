@@ -3,7 +3,7 @@ ActiveAdmin.register Recipe do
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :name, :brew_type, :description, :tog, :tfg, :tabv, :taroma, :tibu, :label, :tflavpro, :style_id, :is_active
+# permit_params :list, :of, :attributes, :on, :model
 #
 # or
 #
