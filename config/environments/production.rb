@@ -17,13 +17,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = {:host => "gmail.com"}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :tls => true,
-    :address => "smtp.gmail.com",
-    :port    => "587", #verify this port!!
-    :domain  => "gmail.com"
-    :authentication => :login
-    :user_name => "[username]",
-    :password => "[password]"
+    # :tls => true,
+    # :address => "smtp.gmail.com",
+    # :port    => "587", #verify this port!!
+    # :domain  => "gmail.com"
+    # :authentication => :login
+    # :user_name => "[username]",
+    # :password => "[password]"
   }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
