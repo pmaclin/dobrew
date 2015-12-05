@@ -21,7 +21,7 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port    => "587", #verify this port!!
     :domain  => "gmail.com"
-    :authentication => :login,
+    :authentication => :login
     :user_name => "[username]",
     :password => "[password]"
   }
