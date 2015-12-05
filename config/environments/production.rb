@@ -19,7 +19,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :tls => true,
     :address => "smtp.gmail.com",
-    :port    => 587, #verify this port!!
+    :port    => "587", #verify this port!!
     :domain  => "gmail.com"
     :authentication => :login,
     :user_name => "[username]",
