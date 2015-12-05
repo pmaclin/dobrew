@@ -14,17 +14,22 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+
+  #  Setting up per tutorial found @ https://rubyonrailshelp.wordpress.com/2014/01/02/setting-up-mailer-using-devise-for-forgot-password/
   config.action_mailer.default_url_options = {:host => "gmail.com"}
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
 
   config.action_mailer.smtp_settings = {
-    # :tls => true,
-    # :address => "smtp.gmail.com",
-    # :port    => "587", #verify this port!!
-    # :domain  => "gmail.com"
-    # :authentication => :login
-    # :user_name => "[username]",
-    # :password => "[password]"
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: ENV["GMAIL_DOMAIN"],
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"]
   }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
