@@ -6,7 +6,7 @@ set :application, 'dobrew'
 set :repo_url, 'https://github.com/pmaclin/dobrew.git'
 set :deploy_to, '/opt/www/dobrew'
 set :user, 'deploy'
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets }
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/uploads }
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
 # Default branch is :master
