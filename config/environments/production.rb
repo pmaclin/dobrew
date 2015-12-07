@@ -16,7 +16,7 @@ Rails.application.configure do
 
 
   #  Setting up per tutorial found @ https://rubyonrailshelp.wordpress.com/2014/01/02/setting-up-mailer-using-devise-for-forgot-password/
-  config.action_mailer.default_url_options = {:host => "http://dobrew.com"}
+  config.action_mailer.default_url_options = {:host => "http://doyoubrew.com"}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
