@@ -1,6 +1,5 @@
   <div class="page-header">
     <div class="container">
-
       <div id="tbe-carousel" class="carousel slide" data-ride="carousel" class="col-sm-12 col-md-6 col-lg-12">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -16,28 +15,28 @@
               <%= image_tag "1.jpg" %>
               <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
               <div class="carousel-caption">
-                  <!-- <h3>Do You Brew?</h3> -->
-              </div>
-            </div>
-            <div class="item">
-              <%= image_tag "2.jpg" %>
-              <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
-              <div class="carousel-caption">
-                  <!-- <h3>Caption Text 2</h3> -->
+                  <h3 align="center">1</h3>
               </div>
             </div>
             <div class="item">
               <%= image_tag "3.jpg" %>
               <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
               <div class="carousel-caption">
-                  <!-- <h3 align="right">King Hop</h3> -->
+                  <h3 align="center">3</h3>
+              </div>
+            </div>
+            <div class="item">
+              <%= image_tag "2.jpg" %>
+              <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
+              <div class="carousel-caption">
+                  <h3 align="center">2</h3>
               </div>
             </div>
             <div class="item">
               <%= image_tag "4.jpg" %>
               <!-- <img src="http://placehold.it/1200x315" alt="..."> -->
               <div class="carousel-caption">
-                  <!-- <h3>Caption Text 4</h3> -->
+                  <h3 align="center">4</h3>
               </div>
             </div>
           </div>
@@ -51,10 +50,11 @@
               </a>
 
         </div> <!-- Carousel -->
+
     <hr>
       <div class="row"> <!-- Row One - Uppper Row -->
       <!-- Left Column -->
-          <div align="center" class="col-md-6 col-lg-9">
+          <div align="center" class="col-md-6 col-lg-10">
             <h1 align="center"><i>"You Are The Brewmaster!"</i></h1>
             <br>
               <h4 align="left" ><font color="navy"><i>"What's the Brewer's Edge?"</i></font></h4>
@@ -73,7 +73,7 @@
           </div>
 
     <!-- Right Column -->
-        <div align="left" class="col-sm-6 col-md-6 col-lg-3">
+        <div align="left" class="col-sm-6 col-md-6 col-lg-2">
           <h2>Log in</h2>
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
@@ -86,10 +86,12 @@
             </div>
         <% end %>
           <%= render "devise/shared/links" %>
+
           <div align="center" class="col-sm-6 col-md-6 col-lg-12">
             <%= image_tag "tbe.jpg", :height => '100%', :width => '100%' %>
             <h4>BREW. SHARE. ENJOY!</h4>
           </div>
+
         </div>
 
 

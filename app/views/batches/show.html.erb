@@ -61,7 +61,7 @@
 <hr>
 
 <!-- CODE TO GENERATE UNIQUE IDs DIV -->
-<div class="col-lg-6">
+<div class="col-lg-4">
   <div class="panel panel-primary">
     <div class="panel-heading">
       <h3 class="panel-title">Generate Unique IDs</h3>
@@ -69,21 +69,21 @@
 
     <div class="panel-body">
       <ul class="list-group">
-        <h6>Each batch can have a max of 24 unique IDs generated</h6>
-        <h6>Clicking the "Generate IDs" button below will generate 6 IDs at a time until you've reached the max amount</h6>
+        <h6><small>Each batch can have a max of 24 unique IDs generated</small></h6>
+        <h6><small>Clicking the "Generate IDs" button below will generate 6 IDs at a time until you've reached the max amount</small></h6>
         <hr>
-        <h6 align="center">You've generated</h6><h3 align="center"><font color="red"><%= @batch.unis.count %></font></h3><h6>IDs so far for this batch. You've got <%= 24.to_i - @batch.unis.count %> left.</h6>
+        <h6 align="center">You've generated</h6><h3 align="center"><font color="blue"><%= @batch.unis.count %></font></h3><h6 align="center">IDs so far for this batch. You've got <%= 24.to_i - @batch.unis.count %> left.</h6>
       </ul>
 
         <dd align="center"><h4><font color="red"><%#= @batch.unis.count %></font></h4></dd>
 
 
     <% if @batch.unis.count >= '24'.to_i %>
-      <h5 align="center"><font color="red">You've maxed out the numbers of IDs you can create for this batch.</font></h5>
+      <h5 align="center"><font color="blue">You've maxed out the numbers of IDs you can create for this batch.</font></h5>
     <% else %>
       <%= form_tag("/batches/#{params[:id]}/generate_unis", method:"post") do %>
         <div align="center">
-          <label for="new uni numbers" >Click to generate more IDs: </label>
+          <label for="new uni numbers" >Generate more IDs: </label>
                 <!-- <input name="uni_num" type="text" id="first"> -->
                 <input align="right" type="submit" value="Generate IDs">
         </div>
@@ -95,19 +95,31 @@
 </div> <!-- end div col-6 for generating unique IDs -->
 <!-- END CODE TO GENERATE UNIQUE IDs DIV -->
 
-  <div class="col-lg-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">IDs generated for batch id# <%= @batch.id %></h3>
-        <h6>Provide one number with each bottle, taster, or pour you give to a fan. They'll use this to rate this batch.</h6>
-      </div>
-      <div class="panel-body">
-        <% @batch.unis.each do |uni| %>
-          <font size="2"><a href="#" class="list-group-item"><%= uni.rand_num %></a></font>
-        <% end %>
-      </div>
-    </div>
-  </div>
+
+<!-- Code to display Unique Random number IDs -->
+              <div class="col-lg-8">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">IDs generated for batch id# <%= @batch.id %></h3>
+                    <h6><small>Apply one number to each bottle, taster, or pour you give to your fans. Fans will use the number to rate this batch.</small></h6>
+                  </div>
+
+<!--                   <div class="panel-body">
+                    <% @batch.unis.each do |uni| %>
+                          <font size="2"><a href="#" class="list-group-item"><%= uni.rand_num %></a></font>
+                    <% end %>
+                  </div> -->
+
+                  <div class="panel-body" align="center">
+                    <div class="col-lg-24">
+                      <% @batch.unis.each do |uni| %>
+                            <font size="3"><span class="label label-primary"><%= uni.rand_num %></span></font>
+                      <% end %>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
 
             </div>
           </ul>
